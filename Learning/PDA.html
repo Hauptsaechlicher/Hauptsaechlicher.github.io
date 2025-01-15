@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css\stylesheet.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link href="img\Logo.png" rel="icon" type="image/x-icon"/>
+    <title>Informatik Studium</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Programmierung, Datenstrukturen und Algorithmen</h1>
+        <nav class="navigation">
+            <div class="navdiv">
+                <ul>
+                    <li><a href="#section0">00. Arrays</a></li>
+                    <li><a href="#section1">01. Selection Sort</a></li>
+                    <li><a href="#section2">02. Bubble Sort</a></li>
+                    <li><a href="#section3">03. Insertion Sort</a></li>
+                    <li><a href="#section4">04. Quick Sort</a></li>
+                    <li><a href="#section5">05. Merge Sort</a></li>
+                </ul>
+            </div>
+            <div class="navdiv">
+                <ul>
+                    <li><a href="#section6">06. Klassen und Objekte</a></li>
+                    <li><a href="#section7">07. JUnit Test</a></li>
+                    <li><a href="#section8">08. Linked Lists</a></li>
+                    <li><a href="#section9">09. Bäume</a></li>
+                    <li><a href="#section10">10. AVL-Bäume</a></li>
+                    <li><a href="#section11">11. Hashing</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container" id="section0">
+        <h1>Arrays</h1>
+        <p>
+            Ein <b>Array</b> ist eine Datenstruktur die eine Sammlung von  gleichartigen Elementen enthält.<br>
+            Um Elemente in einem Array zu suchen, ist ein Arrays mit eindeutigen Elementen gegeben.
+        </p>
+        
+        <details>
+            <summary><h2>Implementierung: Sequentielle Suche</h2></summary>
+            <p>
+                Bedenke, dass in Java das kleinste Elemente 0 und nicht 1 ist.<br>
+                Heißt beispielsweise Nummer 7 befindet sich an Position 6.
+            </p>
+            <pre><code class="language-java">
+public class SequentialSearch {
+    int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+    int key = 7;
+
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == key) {
+            System.out.println("Element gefunden an Position: " + i);
+            break;
+        }
+    }
+}
+            </code></pre>
+        </details>
+        <white-space></white-space>
+        
+
+        
+
+
+    </div>
+
+    <div class="container" id="section1">
+        <h1>Selection Sort</h1>
+
+        <p>
+            Ein <b>Array</b> ist eine Datenstruktur die eine Sammlung von Elementen enthält.<br>
+            Zum Sortieren von Arrays existieren verschiedene Sortieralgorithmen um Daten anhand von Schlüsseln zu sortieren.
+        </p>
+
+        <p>
+            Beim <b>Selection Sort</b> handelt es sich um einen Sortieralgorithmus, der <b>durch auswählen sortiert.</b>
+        </p>
+
+        <white-space></white-space>
+
+        <img class="center" src="img\SelectionSort1.png">
+
+        <trenn-strich></trenn-strich>
+
+        <img class="center" src="img\SelectionSort2.png">
+
+        <trenn-strich></trenn-strich>
+
+        <img class="center" src="img\SelectionSort3.png">
+
+        <trenn-strich></trenn-strich>
+
+        
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+        <pre><code class="language-java">
+public class Selectionsort {
+    int[] arr = { 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, 4358 };
+
+    for (int i = 0; i < arr.length - 1; i++) {
+
+        int min = i;
+
+        // Suche nach dem kleinsten Element
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+
+        // swap arr[min] und arr[i]
+        int temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
+    }
+}
+        </code></pre>
+    
+        <white-space></white-space>
+
+        <h2>Console output</h2>
+
+        <pre><code class="language-java">
+[1675, 2088, 3157, 4358, 5562, 6719, 7634, 8130, 9784]
+        </code></pre>
+        </details>
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section2">
+        <h1>Bubble Sort</h1>
+
+        <p>
+
+        </p>
+    </div>
+
+    <div class="container" id="section3">
+        <h1>Insertion Sort</h1>
+
+        <p>
+
+        </p>
+    </div>
+
+    <div class="container" id="section4">
+        <h1>Quick Sort</h1>
+
+        <p>
+            Der <b>Quickt Sort</b> ist ein Algorithmus der ein unsortiertes Array in zwei Teil-Arrays aufteilt und diese
+            rekursiv sortiert. Dabei wählt man einen Pivot-Wert p. Dieser wird sortiert, das Array wird aufgeteilt und es werden
+            2 neue Pivots sortiert.
+        </p>
+        <p>  
+            Mit dem Quick Sort kommt man im Best-Case in der O-Notation auf Gesamtkosten von O(n log n). 
+        </p>
+
+        <white-space></white-space>
+
+        <img class="center" src="img\QuickSort1.png">
+
+        <img class="center" src="img\QuickSort2.png">
+
+        <trenn-strich></trenn-strich>
+
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+
+        <pre><code class="language-java">
+public class QuickSort {
+
+    // Main
+    public static void main(String[] args) {
+        int[] Array = { 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, 4358 };
+        quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    quickSort(arr, 0, arr1.length - 1);
+    System.out.println("Sortiertes Array: ");
+
+    for (int i : Array) {
+    System.out.print(i + " ");
+    }
+
+    // Quick Sort
+    public static void QuickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    // Partition
+    public static void partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1);
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+}
+        </code></pre>
+        
+
+        <white-space></white-space>
+
+        
+        <h2>Console output</h2>
+
+        <pre><code class="language-java">
+[1675, 2088, 3157, 4358, 5562, 6719, 7634, 8130, 9784]
+        </code></pre>
+        </details>
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section5">
+        <h1>Merge Sort</h1>
+
+        <p>
+            Der <b>Merge Sort</b> ist ein Algorithmus der ein unsortiertes Array durch die Mitte bis zu ein-elementigen Teil-Arrays eingeteilt.
+            Die jeweiligen Teil-Arrays werden dann wieder zurück sortiert.
+        </p>
+
+        <white-space></white-space>
+
+        <img class="center" src="img\MergeSort1.png">
+
+        <trenn-strich></trenn-strich>
+
+        <img class="center" src="img\MergeSort2.png">
+
+        <trenn-strich></trenn-strich>
+
+        <img class="center" src="img\MergeSort3.png">
+
+        <trenn-strich></trenn-strich>
+
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+
+        <pre><code class="language-java">
+public class MergeSort {
+
+    // Main
+    public static void main(String[] args) {
+        int[] Array = { 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, 4358 };
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // Merge Sort
+    public static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
+            mergeSort(arr, l, m);
+            mergeSort(arr, m + 1, r);
+            merge(arr, l, m, r);
+        }
+    }
+
+    // Merge
+    public static void merge(int[] arr, int l, int m, int r) {
+        int n1 = m - l + 1;
+        int n2 = r - m;
+
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[l + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[m + 1 + j];
+
+        int i = 0, j = 0;
+        int k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+         }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+         while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+     }
+}
+        </code></pre>
+
+        <white-space></white-space>
+
+        <h2>Console output</h2>
+
+        <pre><code class="language-java">
+[1675, 2088, 3157, 4358, 5562, 6719, 7634, 8130, 9784]
+        </code></pre>
+        </details>
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section6">
+        <h1>Klassen und Objekte</h1>
+
+        <p>
+            Lorem Ipsum
+        </p>
+
+        <trenn-strich></trenn-strich>
+
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+
+        <pre><code class="language-java">
+
+        </code></pre>
+        </details>
+        <white-space></white-space>
+        </div>
+
+    <div class="container" id="section7">
+        <h1>JUnit Test</h1>
+
+        <p>
+            Wir verwenden JUnit um unseren Code auf richtige Funktionalität zu testen.
+        </p>
+
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+
+        <pre><code class="language-java">
+public class Money {
+
+    private int amount;
+    private String currency;
+
+    // Constructor
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+
+    // Getter
+    public int getAmount() {
+        return amount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+}
+        </code></pre>
+
+        <h2>Test-Klasse</h2>
+
+        <pre><code class="language-java">
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+public class MoneyTest {
+    @Test
+    public void testMoneyEUR() {
+        Money m12EUR = new Money(12, "EUR");
+        assertNotNull(m12EUR);
+        assertEquals(12, m12EUR.getAmount());
+        assertEquals("EUR", m12EUR.getCurrency());
+    }
+}
+        </code></pre>
+        </details>
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section8">
+        <h1>Linked Lists</h1>
+        <p>
+            <b>Verkettete Listen (Linked Lists)</b> sind eine Datenstruktur die aus Knoten besteht. Jeder Knoten hat einen Wert und einen Verweis auf den nächsten Knoten.<br>
+            Elemente können darin hinzugefügt, gelöscht und verändert/ersetzt werden.
+        </p>
+
+        <img class="center" src="img\">
+
+        <trenn-strich></trenn-strich>
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+
+        <pre><code class="language-java">
+
+        </code></pre>
+        </details>
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section9">
+        <h1>Bäume</h1>
+        <p>
+            Bäume sind Datenstrukturen die Linked Lists ähneln
+        </p>
+        
+        <white-space></white-space>
+        
+        <img class="center" src="img\Bäume1.png">
+        
+        <white-space></white-space>
+        
+        <h2>Baumtypen</h2>
+        
+        <white-space></white-space>
+        
+        <img class="center" src="img\Bäume2.png">
+        
+        <white-space></white-space>
+        
+        <p>
+            <b>Vollständig (full):</b> Alle Ebenen des Baumes sind vollständig gefüllt, bis auf eventuell die letzte.<br>
+            <b>Lückenlos (complete):</b> Keine Lücken zwischen den Knoten<br>
+            <b>Perfekt (perfect):</b> Vollständiger Baum, jedoch sind alle Ebenen vollständig gefüllt, aka. jeder Knoten hat genau 2 Kinder & alle Blätter sind auf der gleichen Ebene
+        </p>
+        
+        <trenn-strich></trenn-strich>
+        
+        <h2>Binärbäume</h2>
+        
+        <p>
+            <b>Binärbaume</b> sind Bäume die maximal 2 Kinder (Knoten) zur Wurzel haben.
+        </p>
+        
+        <white-space></white-space>
+        
+        <img class="center" src="img\Bäume3.png">
+        
+        <white-space></white-space>
+        
+        <details>
+        <summary><h2>Implementierung</h2></summary>
+        
+        <h3>Node (Knoten)</h3>
+        
+        <pre><code class="language-java">
+public class Node {
+
+    private String value;
+    private Node left;
+    private Node right;
+
+    // Constructor
+    public Node(String value) {
+        this.value = value;
+        left = null;
+        right = null;
+    }
+}
+        </code></pre>
+
+        <h3>Bintree (Binärbaum)</h3>
+
+        <pre><code class="language-java">
+public class BinTree {
+
+    private Node root;
+
+    public Bintree() {}
+
+    // Constructor
+    public BinTree(String value) {
+        this.root = new Node(value);
+    }
+}
+        </code></pre>
+        </details>
+        
+        <trenn-strich></trenn-strich>
+
+        <h2>Traversieren</h2>
+        <p>
+            Beim Traversieren wird ein Baum über alle Knoten durchlaufen. Dabei gibt es verschiedene Reihenfolgen die wie folgt aussehen:
+        </p>
+        
+        <white-space></white-space>
+        
+        <h3>Inorder-Traversierung</h3>
+        
+        <p>
+            <b>inorder:</b><br>
+            1. links<br>
+            2. Wurzel<br>
+            3. rechts
+        </p>
+
+        <white-space></white-space>
+        
+        <img class="center" src="img\Inorder.png">
+        
+        <white-space></white-space>
+            <details>
+            <summary><h2>Implementierung</h2></summary>
+        <pre><code class="language-java">
+public class Inorder {
+    public void inorder() {
+        if (!isEmpty()) {
+            getLeft().inorder();    // links
+            System.out.print(getValue());   // Wurzel
+            getRight().inorder();   // rechts
+        }
+    }
+}
+            </code></pre>
+        </details>
+
+        <trenn-strich></trenn-strich>
+            
+        <h3>Preorder-Traversierung</h3>
+            
+        <p>
+            <b>preorder:</b><br>
+            1. Wurzel<br>
+            2. links<br>
+            3. rechts
+        </p>
+            
+        <white-space></white-space>
+            
+        <img class="center" src="img\Preorder.png">
+            
+        <white-space></white-space>
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public class Preorder {
+    public void preorder() {
+        if (!isEmpty()) {
+        System.out.print(getValue());   // Wurzel
+        getLeft().preorder();   // links
+        getRight().preorder();  // rechts
+        }
+    }
+}
+            </code></pre>
+        </details>
+
+        <trenn-strich></trenn-strich>
+            
+        <h3>Postorder-Traversierung</h3>
+            
+        <p>
+            <b>postorder:</b><br>
+            1. links<br>
+            2. rechts<br>
+            3. Wurzel
+        </p>
+            
+        <white-space></white-space>
+            
+        <img class="center" src="img\Postorder.png">
+            
+        <white-space></white-space>
+        
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public class Postorder {
+    public void postorder() {
+        if (!isEmpty()) {
+        getLeft().postorder();  // links
+        getRight().postorder(); // rechts
+        System.out.print(getValue());   // Wurzel
+        }
+    }
+}
+            </code></pre>
+        </details>
+
+        <trenn-strich></trenn-strich>
+
+        <h2>Suche</h2>
+        <p>
+            Lorem Ipsum.
+        </p>
+
+        <white-space></white-space>
+
+        <h2>Tiefensuche</h2>
+            
+        <img class="center" src="img\Tiefensuche.png">
+            
+        <white-space></white-space>
+        
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public BinTree dfs(String data) {
+    if (isEmpty()) {
+        return null;
+    }
+
+    if (getValue().equals(data)) {
+        return this;
+    }
+
+    BinTree result = null;
+        if (getLeft() != null) {
+            result = getLeft().dfs(data);
+
+            if (result != null) {
+                return result;
+            }
+        }
+    
+        if (getRight() != null) {
+            result = getRight().dfs(data);
+        }
+    return result;
+}
+            </code></pre>
+        </details>
+
+        <trenn-strich></trenn-strich>
+            
+        <h2>Breitensuche</h2>
+            
+        <white-space></white-space>
+            
+        <img class="center" src="img\Breitensuche.png">
+            
+        <white-space></white-space>
+        
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public BinTree bfs(String data) {
+    BinTreeQueue queue = new BinTreeQueue();
+    
+    if (!isEmpty()) {
+        queue.enqueue(this);
+    }
+
+    while (!queue.isEmpty()) {
+        BinTree tree = queue.dequeue();
+        
+        if (tree.getValue().equals(data)) {
+            return tree;
+        }
+        
+        if (!tree.getLeft().isEmpty()) {
+            queue.enqueue(tree.getLeft());
+        }
+    
+        if (!tree.getRight().isEmpty()) {
+            queue.enqueue(tree.getRight());
+        }
+    }
+    return null;
+}
+            </code></pre>
+        </details>
+
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section10">
+        <h1>AVL-Bäume</h1>
+        <h2>Suchbäume</h2>
+        <p>
+            <b>Suchbäume</b> sind <b>Binärbäume</b> mit einer kleinen Addition an Eigenschaften:
+        </p>
+        <p>
+            1. Die Werte des <b>linken Teilbaums (Subtree)</b> sind <b>kleiner</b> als der Wert der Wurzel X.<br>
+            2. Die Werte des <b>rechten Teilbaums (Subtree)</b> sind <b>größer</b> als der Wert der Wurzel X.
+        </p>
+
+        <white-space></white-space>
+
+        <img class="center" src="img\Suchbaum.png">
+
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public class SearchTree {
+
+    private Node root;
+    public SearchTree() { }
+
+    public SearchTree(KeyValue content) {
+        root = new Node(content);
+    }
+
+    public SearchTree(SearchTree left, KeyValue content, SearchTree right) {
+
+        root = new Node(content);
+
+        if (left != null) {
+        root.setLeft(left.root);
+        }
+
+        if (right != null) {
+        root.setRight(right.root);
+        }
+    }
+}
+            </code></pre>
+        </details>
+
+        <white-space></white-space>
+
+        <details>
+            <summary><h2>Suche im Suchbaum</h2></summary>
+            <pre><code class="language-java">
+public KeyValue search(int key) {
+    if (!isEmpty()) {
+        if (key == getValue().getKey()) {
+            return getValue();
+        }
+
+        else if (key < getValue().getKey() && getLeft() != null) {
+            // search left sub-tree
+            return getLeft().search(key);
+        }
+
+        else if (key > getValue().getKey() && getRight() != null) {
+            // search right sub-tree
+            return getRight().search(key);
+        }
+    }
+    return null; // key not found
+}
+            </code></pre>
+        </details>
+
+        <trenn-strich></trenn-strich>
+
+        <h2>AVL-Bäume</h2>
+        <p>
+            <b>AVL-Bäume</b> sind im Grunde Binärbäume (Suchebäume) die aber eine Rotationsoperation besitzen um den Baum
+            balanced zu behalten.
+        </p>
+        <p>
+            Die <b>Höhe</b> jedes Knoten n darf sich nur um <b>höchstens 1 unterscheiden.</b>
+        </p>
+            
+        <img class="center" src="img\AVL-Bäume1.png">
+
+        <trenn-strich></trenn-strich>
+
+        <img class="center" src="img\AVL-Bäume2.png">
+
+    </div>
+
+    <div class="container" id="section11">
+            
+        <h1>Hashing</h1>
+            
+        <p>
+            Lorem Ipsum.
+        </p>
+    </div>
+</body>
+</html>
