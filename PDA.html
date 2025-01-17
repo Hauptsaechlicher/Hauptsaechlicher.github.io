@@ -431,15 +431,219 @@ public class MoneyTest {
             Elemente können darin hinzugefügt, gelöscht und verändert/ersetzt werden.
         </p>
 
-        <img class="center" src="img\">
-
         <trenn-strich></trenn-strich>
+
+        <h2>Linked String List</h2>
+        <p>
+            Die <b>Linked String List</b> ist eine verkettete Liste die Strings speichert.<br>
+            Vom <b>start</b> aus beginnen wir bei <b>Element 1</b>.<br>
+            Element 1 zeigt über <b>next</b> auf <b>Element 2</b>.<br>
+            Jedem Element ist ein Wert <b>value</b> untergeordnet.
+        </p>
+
+        <white-space></white-space>
+        <img class="center" src="img\LinkedStringList1.png">
+        <white-space></white-space>
+
         <details>
         <summary><h2>Implementierung</h2></summary>
 
         <pre><code class="language-java">
+public class LinkedStringList {
 
+    LinkedStringList list = new LinkedStringList();
+
+    // Elemente hinzufügen
+    list.add("A");          // [A]
+    list.add("B");          // [A, B]
+    list.add("D");          // [A, B, D]
+    list.insert("C", 2)     // [A, B, C, D]
+
+    // Elemente ersetzen
+    list.set("E", 2);       // [A, B, E, D]
+
+    // Elemente löschen
+    list.remove(2);         // [A, B, D]
+
+    // Ausgabe (Print out)
+    for (int i = 0; i < list.size(); i++) {
+        System.out.println(list.get(i));
+    }
+    // A, B, D
+}
         </code></pre>
+        </details>
+        <trenn-strich></trenn-strich>
+
+        <h2>Einfügen von Elementen (einer vorhandenen Liste)</h2>
+        <p>
+            Wir fügen Elemente mithilfe des <b>current</b> ein um die gewollte Position zu bestimmen.
+            Die Verbindung von Element 2 <b>next</b> zu Element 3 wird unterbrochen.
+        </p>
+        <img class="center" src="img\LinkedStringList2.png">
+
+        <trenn-strich></trenn-strich>
+        <p>
+            Des Weiteren verbinden wir zuerst Element 5 mit Element 3, um zu verhindern,<br>
+            dass wir das <b>value</b> von Element 3 verlieren.
+        </p>
+
+        <p>
+            Erst <b>danach</b> setzen wir <b>next</b> Element 2 auf Element 5.
+        </p>
+        <img class="center" src="img\LinkedStringList3.png">
+
+        <white-space></white-space>
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public String get(int index) {
+    if (start == null) {    // Falls Liste leer ist
+        return null;
+    }
+
+    LinkedStringListElement current = start;
+    int pos = 0;    // Position
+    while (pos < index) {
+        if (current.getNext() == null) {
+            // Liste hat nicht genug Elemente
+            return null;
+        }
+        current = current.getNext();
+        pos++;
+    }
+    return current.getValue();
+}
+            </code></pre>    
+        </details>
+        <white-space></white-space>
+        
+        <trenn-strich></trenn-strich>
+
+        <h2>Linked Integer List</h2>
+        <p>
+            Die <b>Linked Integer List</b> ähnelt der Linked String List. Jedoch verwenden wir hier <b>Integer (nicht int!)</b> anstatt von String.
+        </p>
+
+        <img class="center" src="img\">
+
+        <white-space></white-space>
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <white-space></white-space>
+            
+            <h3>Liste anlegen</h3>
+            <pre><code class="language-java">
+public class LinkedIntegerList {
+
+    // Werte hinzufügen
+    list.add(5);      // [5]
+    list.add(3);      // [5, 3]
+    list.add(4);      // [5, 3, 4]
+    list.add(1);      // [5, 3, 4, 1]
+    list.add(2);      // [5, 3, 4, 1, 2]
+    list.add(-4);     // [5, 3, 4, 1, 2, -4]
+    list.add(-3);     // [5, 3, 4, 1, 2, -4, -3]
+    list.add(0);      // [5, 3, 4, 1, 2, -4, -3, 0]
+
+}
+            </code></pre>
+
+            <h3>Element</h3>
+            <pre><code class="language-java">
+public class LinkedIntegerListElement {
+
+    private LinkedIntListElement next;
+    private Integer value;
+
+    // getter & setter
+    public LinkedIntListElement getNext() {
+        return next;
+    }
+
+    public void setNext(LinkedIntListElement next) {
+        this.next = next;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
+}
+            </code></pre>
+
+            <h3>Einfügen</h3>
+            <pre><code class="language-java">
+public void add(int value) {
+    LinkedIntListElement elem = new LinkedIntListElement();
+    elem.setValue(value);
+
+    // Falls Liste leer oder neuer Wert kleiner als Start:
+    if (start == null || start.getValue() > value) {
+        elem.setNext(start);
+        start = elem;
+        return;
+    }
+
+    // Einfügen an passender Stelle (nach kleinerem Wert & vor größerem Wert):
+    LinkedIntListElement current = start;
+    while (current.getNext() != null && current.getNext().getValue() < value) {
+        current = current.getNext();
+    }
+
+    // Einfügen selbst
+    elem.setNext(current.getNext());
+    current.setNext(elem);
+}
+            </code></pre>
+
+            <h3>Ersetzen / Löschen</h3>
+            <pre><code class="language-java">
+// Methoden anlegen
+private void setValue(String number, int i) {
+
+}
+
+private void remove(int i) {
+
+}
+
+
+// Ersetzen eines Elements
+list.setValue("8", 3) // (number, index) -> [5, 3, 8, 1, 2, -4, -3, 0]
+
+// Löschen eines Elements
+list.remove(2) // (index) -> [5, 8, 1, 2, -4, -3, 0]
+            </code></pre>
+
+            <h3>Ausgabe</h3>
+            <pre><code class="language-java">
+for (int i = 0; i < list.size(); i++) {
+    System.out..print(list.get(i));
+}
+// 5, 8, 1, 2, -4, -3, 0
+            </code></pre>
+        </details>
+        <trenn-strich></trenn-strich>
+
+        <h2>Array List</h2>
+        <p>
+            Lorem Ipsum.
+        </p>
+
+        <img class="center" src="img\">
+
+        <white-space></white-space>
+        <details>
+            <summary><h2>Implementierung</h2></summary>
+            <pre><code class="language-java">
+public class ArrayList {
+
+}
+            </code></pre>
         </details>
         <white-space></white-space>
     </div>
@@ -627,7 +831,7 @@ public class Postorder {
 
         <h2>Suche</h2>
         <p>
-            Lorem Ipsum.
+            Wir können in einem Binärbaum nach einem bestimmten Wert suchen. Dazu gibt es zwei Methoden: <b>Tiefensuche (DFS)</b> und <b>Breitensuche (BFS)</b>.
         </p>
 
         <white-space></white-space>
@@ -783,7 +987,7 @@ public KeyValue search(int key) {
 
         <h2>AVL-Bäume</h2>
         <p>
-            <b>AVL-Bäume</b> sind im Grunde Binärbäume (Suchebäume) die aber eine Rotationsoperation besitzen um den Baum
+            <b>AVL-Bäume</b> sind <b>Suchbäume</b> die aber eine Rotationsoperation besitzen um den Baum
             balanced zu behalten.
         </p>
         <p>
@@ -803,8 +1007,88 @@ public KeyValue search(int key) {
         <h1>Hashing</h1>
             
         <p>
-            Lorem Ipsum.
+            Beim <b>Hashing</b> wird <b>"gefunden anstatt gesucht".</b><br>
+            Es werden basierend auf gegebenen Schlüsseln die Position der dazugehörigen Daten gefunden.
         </p>
+
+        <trenn-strich></trenn-strich>
+
+        <h2>Hash-Tabelle</h2>
+        <p>
+            <b>K = Menge der Schlüssel</b><br>
+            <b>h = Hash-Funktion</b> mit h: K -> {0, 1, ..., m-1}<br>
+            <b>h(k) = Hash-Adresse</b>
+
+        </p>
+
+        <img class="center" src="img\HashTabelle1.png">
+
+        <trenn-strich></trenn-strich>
+
+        <h2>Überlauflisten</h2>
+        <p>
+            Die Position der Schlüssel innerhalb der Hash-Tabelle bestimmen wir über folgende Formel:
+        </p>
+
+        <p class="p-center">
+            h(k) = k (mod m)
+
+        </p>
+
+        <p class="p-center">
+            m = Anzahl der Schlüssel<br>
+            k = Schlüssel
+        </p>
+
+        <p>
+            <b>Beispiel:</b><br>
+            Gegeben sei eine Hash-Tabelle<br>
+            der Größe <b>m = 7</b>,<br>
+            Schlüsselmenge K = {0, 1, ..., 499}<br>
+            und die Hash-Funktion h(k) = k (mod m) -> h(k) = k (mod 7)<br>
+        </p>
+        <p>
+            Folgende Schlüssel sind gegeben:<br>
+            <b>12, 53, 5, 15, 2, 19, 43</b>
+        </p>
+        <p>
+            Nach Einfügen ergibt sich folgendes Bild:
+        </p>
+        <white-space></white-space>
+
+        <img class="center" src="img\Überlauflisten1.png">
+
+        <trenn-strich></trenn-strich>
+
+        <h2>Open Hashing</h2>
+
+        <h3>Lineares Sondieren</h3>
+        <p>
+            Wir berechnen die Sondierungsreihenfolge wie folgt:
+        </p>
+        <p class="p-center">
+            (h(k) - s(j, k)) mod m
+        </p>
+        <p class="p-center">
+            k = Schlüssel<br>
+            j = Einfügeversuchsnummer für k<br>
+        </p>
+        <p>
+            <b>Beispiel:</b><br>
+            Hash-Funktion: h(k) = k (mod m)<br>
+            Sondierungsreihenfolge: h(k) - s(j, k)<br>
+            Schlüssel: <b>18, 12, 16, 22, 10, <span class="red">25, 5, 31, 11</span></b><br>
+        </p>
+
+        <img class="center" src="img\OpenHashing1.png">
+        <trenn-strich></trenn-strich>
+        <h3>Quadratisches Sondieren</h3>
+        <p>
+            Wir berechnen die Sondierungsreihenfolge wie folgt:
+        </p>
+
+        <img class="center" src="img\OpenHashing2.png">
+        <white-space></white-space>
     </div>
 </body>
 </html>
