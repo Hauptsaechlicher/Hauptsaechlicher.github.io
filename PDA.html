@@ -294,8 +294,11 @@ public class InsertionSort {
 
         <p>
             Der <b>Quick Sort</b> ist ein Algorithmus der ein unsortiertes Array in zwei Teil-Arrays aufteilt und diese
-            rekursiv sortiert. Dabei wählt man einen Pivot-Wert p. Dieser wird sortiert, das Array wird aufgeteilt und es werden
-            2 neue Pivots sortiert.
+            rekursiv sortiert. Dabei wählt man einen Pivot-Wert p. Dieser wird sortiert und das Array wird aufgeteilt.
+        </p>
+        <p>
+            Alle Elemente die <b>kleiner als p</b> sind, kommen in das <b>linke Teil-Array.</b><br>
+            Alle Elemente die <b>größer als p</b> sind, kommen in das <b>rechte Teil-Array.</b>
         </p>
         
         <white-space></white-space>
@@ -306,6 +309,17 @@ public class InsertionSort {
 
         <trenn-strich></trenn-strich>
 
+        <h2>Analog</h2>
+        <p>
+            [ 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, <span class="red">4358</span>]<br>
+            [ 3157, 1675, <span class="green">2088</span> ] <span class="red">4358</span> [ 6719, 8130, 9784, 7634, <span class="green">5562</span> ]<br>
+            [ 1675 ] <span class="green">2088</span> [ 3157 ] <span class="red">4358</span> <span class="green">5562</span> [ 6719, 8130, 9784, <span class="blue">7634</span> ]<br>
+            [ 1675 ] <span class="green">2088</span> [ 3157 ] <span class="red">4358</span> <span class="green">5562</span> [ 6719 ] <span class="blue">7634</span> [ 8130, 9784 ]<br>
+            <br>
+            1675 2088 3157 4358 5562 6719 7634 8130 9784
+        </p>
+
+        <trenn-strich></trenn-strich>
         <details>
         <summary><h3>Implementierung</h3></summary>
 
@@ -404,6 +418,23 @@ public class QuickSort {
 
         <trenn-strich></trenn-strich>
 
+        <h2>Analog</h2>
+        <p>
+            Splitten<br>
+            [ 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, 4358 ]<br>
+            [ 6719, 8130, 3157, 9784 ] [ 7634, 1675, 5562, 2088, 4358 ]<br>
+            [ 6719, 8130 ] [ 3157, 9784 ] [ 7634, 1675 ] [ 5562, 2088, 4358 ]<br>
+            [ 6719 ] [ 8130 ] [ 3157 ] [ 9784 ] [ 7634 ] [ 1675 ] [ 5562 ] [ 2088, 4358 ]<br>
+            <br>
+            Zusammmenfügen<br>
+            [ 6719, 8130 ] [ 3157, 9784 ] [ 1675, 7634 ] [ 2088, 4358, 5562 ]<br>
+            [ 3157, 6719, 8130, 9784 ] [ 1675, 2088, 4358, 5562, 7634 ]<br>
+            [ 1675, 2088, 3157, 4358, 5562, 6719, 7634, 8130, 9784 ]
+
+            
+        </p>
+
+        <trenn-strich></trenn-strich>
         <details>
         <summary><h3>Implementierung</h3></summary>
 
@@ -1367,7 +1398,13 @@ public KeyValue search(int key) {
         <p>
             Folgende Schlüssel sind gegeben:<br>
             <b>12, 5, 53, 2, 15, 19</b><br>
-            mod 7
+            m = 7
+        </p>
+        <p class="p-center">
+            h(k) = k (mod m)<br>
+            s(j, k) = ( ˥ j/2 ˥ )^2 * (-1)^i<br>
+            <br>
+            ˥˥ -> Aufrunden<br>
         </p>
         <white-space></white-space>
         <img class="center" src="img\OpenHashing3.png">
