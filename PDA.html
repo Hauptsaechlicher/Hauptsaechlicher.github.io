@@ -19,30 +19,93 @@
         <nav class="navigation">
             <div class="navdiv">
                 <ul>
-                    <li><a href="#section0">00. Arrays</a></li>
-                    <li><a href="#section1">01. Selection Sort</a></li>
-                    <li><a href="#section2">02. Bubble Sort</a></li>
-                    <li><a href="#section3">03. Insertion Sort</a></li>
-                    <li><a href="#section4">04. Quick Sort</a></li>
-                    <li><a href="#section5">05. Merge Sort</a></li>
-                    <li><a href="#section6">06. Klassen und Objekte</a></li>
+                    <li><a href="#section1">01. Automaten</a></li>
+                    <li><a href="#section2">02. Arrays</a></li>
+                    <li><a href="#section3">03. Selection Sort</a></li>
+                    <li><a href="#section4">04. Bubble Sort</a></li>
+                    <li><a href="#section5">05. Insertion Sort</a></li>
+                    <li><a href="#section6">06. Quick Sort</a></li>
+                    <li><a href="#section7">07. Merge Sort</a></li>
+                    <li><a href="#section8">08. Klassen und Objekte</a></li>
                 </ul>
             </div>
             <div class="navdiv">
                 <ul>
-                    <li><a href="#section7">07. JUnit Test</a></li>
-                    <li><a href="#section8">08. Linked Lists</a></li>
-                    <li><a href="#section9">09. Bäume</a></li>
-                    <li><a href="#section10">10. AVL-Bäume</a></li>
-                    <li><a href="#section11">11. Hashing</a></li>
-                    <li><a href="#section12">12. Heap Sort</a></li>
-                    <li><a href="#section13">13. Graphen</a></li>
+                    <li><a href="#section9">09. JUnit Test</a></li>
+                    <li><a href="#section10">10. Linked Lists</a></li>
+                    <li><a href="#section11">11. Bäume</a></li>
+                    <li><a href="#section12">12. AVL-Bäume</a></li>
+                    <li><a href="#section13">13. Hashing</a></li>
+                    <li><a href="#section14">14. Heap Sort</a></li>
+                    <li><a href="#section15">15. Entscheidungsbäume</a></li>
+                    <li><a href="#section16">16. Graphen</a></li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <div class="container" id="section0">
+    <div class="container" id="section1">
+        <h1>Automaten</h1>
+        <h2>Grammatiken in EBNF-Notation</h2>
+        <p>
+            <b>EBNF</b> steht für <b>Extended Backus-Naur-Form</b> und ist ein gängiger Formalismus zur Beschreibung von Syntax.<br>
+            Für die EBNF gelten folgende Konventionen:
+        </p>
+        <p>
+            <b> ::= </b> - Definition<br>
+            <b> | </b> - Alternativen<br>
+            <b> [ ] </b> - Optionale Elemente<br>
+            <b> { } </b> - Wiederholungen
+        </p>
+        <p>
+            <b>-</b> Terminalsymbole in Anführungszeichen <b>(Bsp. ,,+")</b><br>
+            <b>-</b> Links steht ein Nichtterminalsymbol <b>(Bsp. Arithmetic)</b><br>
+            <b>-</b> Zwischen Links und Rechts steht ein Gleichheitszeichen <b>(Bsp. Arithmetic = ,,+")</b><br>
+            <b>-</b> Rechts steht die Definition des Nichtterminalsymbols <b>(Bsp. Arithmetic = (Wert, ,,+", Wert) | (Wert, ,,-", Wert))</b>
+        </p>
+        <trenn-strich></trenn-strich>
+        <h2>Automaten</h2>
+        <p>
+            Endliche Automaten sind Modelle zur Beschreibung von Prozessen, die in einer endlichen Anzahl von Schritten ablaufen.
+        </p>
+        <p>
+            Sie bestehen aus:<br>
+            - einer <b>Zustandsmenge</b>,<br>
+            - einem <b>Startzustand</b>,<br>
+            - einer <b>Entzustandsmenge</b>,<br>
+            - einem <b>Eingabealphabet</b>,<br>
+            - sowie <b>Zustandsübergänge</b>
+        </p>
+        <p>
+            Dargestellt werden diese als gerichtete Graphen:
+        </p>
+        <white-space></white-space>
+        <img class="center" src="img\Automaten1.png">
+        <white-space></white-space>
+        <p>
+            <span class="blue">Knoten</span> (Kreise) repräsentieren Zustände.<br>
+            <span class="blue">Kanten</span> (Pfeile) repräsentieren Übergänge.<br>
+            <span class="blue">Startzustand</span> wird mit einem Eingangspfeil repräsentiert<br>
+            <span class="blue">Endzustand</span> wird mit einem Doppelkreis repräsentiert<br>
+        </p>
+        <white-space></white-space>
+        <p>
+            Nicht akzeptierte Eingaben können über einem speziellen Endzustand,<br>
+            einem <span class="red">Fehlerzustand F</span> eingefügt werden.
+        </p>
+        <white-space></white-space>
+        <img class="center" src="img\Automaten2.png">
+        <white-space></white-space>
+
+        <h3>Beispiel DEA</h3>
+        <white-space></white-space>
+        <img class="center" src="img\Automaten3.png">
+        <white-space></white-space>
+
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section2">
         <h1>Arrays</h1>
         <p>
             Ein <b>Array</b> ist eine Datenstruktur die eine Sammlung von  gleichartigen Elementen enthält.<br>
@@ -73,7 +136,7 @@ public class SequentialSearch {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section1">
+    <div class="container" id="section3">
         <h1>Selection Sort</h1>
 
         <p>
@@ -179,7 +242,7 @@ public class Selectionsort {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section2">
+    <div class="container" id="section4">
         <h1>Bubble Sort</h1>
         <p>
             Der <b>Bubble Sort</b> ist ein Sortieralgorithmus, bei <b>"durch Aufsteigen sortiert wird."</b><br>
@@ -238,7 +301,7 @@ public class BubbleSort {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section3">
+    <div class="container" id="section5">
         <h1>Insertion Sort</h1>
         <p>
             Der <b>Insertion Sort</b> ist ein Sortieralgorithmus, bei dem <b>"durch Einfügen sortiert wird."</b><br>
@@ -289,7 +352,7 @@ public class InsertionSort {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section4">
+    <div class="container" id="section6">
         <h1>Quick Sort</h1>
 
         <p>
@@ -396,7 +459,7 @@ public class QuickSort {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section5">
+    <div class="container" id="section7">
         <h1>Merge Sort</h1>
 
         <p>
@@ -524,7 +587,7 @@ public class MergeSort {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section6">
+    <div class="container" id="section8">
         <h1>Klassen und Objekte</h1>
 
         <h2>Objekte</h2>
@@ -622,7 +685,7 @@ public void setDots(int dots) {
         <white-space></white-space>
         </div>
 
-    <div class="container" id="section7">
+    <div class="container" id="section9">
         <h1>JUnit Test</h1>
 
         <p>
@@ -687,7 +750,7 @@ public class MoneyTest {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section8">
+    <div class="container" id="section10">
         <h1>Linked Lists</h1>
         <p>
             <b>Verkettete Listen (Linked Lists)</b> sind eine Datenstruktur die aus Knoten besteht. Jeder Knoten hat einen Wert und einen Verweis auf den nächsten Knoten.<br>
@@ -883,7 +946,7 @@ list.remove(2) // (index) -> [5, 8, 1, 2, -4, -3, 0]
             <h3>Ausgabe</h3>
             <pre><code class="language-java">
 for (int i = 0; i < list.size(); i++) {
-    System.out..print(list.get(i));
+    System.out.print(list.get(i));
 }
 // 5, 8, 1, 2, -4, -3, 0
             </code></pre>
@@ -928,7 +991,7 @@ public class ArrayStringList {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section9">
+    <div class="container" id="section11">
         <h1>Bäume</h1>
         <p>
             Bäume sind eine Datenstruktur die aus Knoten besteht. Jeder Knoten hat einen Wert und kann auf andere Knoten verweisen.
@@ -1215,7 +1278,7 @@ public BinTree bfs(String data) {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section10">
+    <div class="container" id="section12">
         <h1>AVL-Bäume</h1>
         <h2>Suchbäume</h2>
         <p>
@@ -1303,7 +1366,7 @@ public KeyValue search(int key) {
 
     </div>
 
-    <div class="container" id="section11">
+    <div class="container" id="section13">
             
         <h1>Hashing</h1>
             
@@ -1499,18 +1562,136 @@ public KeyValue search(int key) {
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section12">
+    <div class="container" id="section14">
         <h1>Heap Sort</h1>
         <p>
-
+            <b>Heap Sort</b> ist ein Sortieralgorithmus der auf der Datenstruktur <b>Heap</b> basiert.
         </p>
+        <white-space></white-space>
+
+        <h2>Heap</h2>
+        <p>
+            Ein <b>Heap</b> ist ein <b>Binärbaum</b> der folgende Eigenschaften besitzt:
+        </p>
+        <p>
+            1. <b>Max-Heap:</b> Jeder Knoten ist größer als seine Kinder<br>
+            2. <b>Min-Heap:</b> Jeder Knoten ist kleiner als seine Kinder
+        </p>
+        <white-space></white-space>
+        <h3>Heapify</h3>
+        <white-space></white-space>
+        <img class="center" src="img\Heap1.png">
+        <trenn-strich></trenn-strich>
+        <img class="center" src="img\Heap2.png">
+        <trenn-strich></trenn-strich>
+        <img class="center" src="img\Heap3.png">
+        <trenn-strich></trenn-strich>
+        
+        <h2>Heap Sort</h2>
+        <white-space></white-space>
+
+        <h3>Beispiel: Max-Heap</h3>
+        <p>
+            <b>Bedingung:</b> Heap-Eigenschaft erfüllen<br>
+            Hier: <b>Max-Heap</b>, also größter Wert an der Wurzel
+        </p>
+        <white-space></white-space>
+        <img class="center" src="img\HeapSort1.png">
+        <trenn-strich></trenn-strich>
+        <img class="center" src="img\HeapSort2.png">
+        <trenn-strich></trenn-strich>
+        
+        <img class="center" src="img\HeapSort3.png">
+        <trenn-strich></trenn-strich>
+        <details>
+            <summary><h3>Implementierung</h3></summary>
+            <white-space></white-space>
+            <h3>Heap Sort</h3>
+            <pre><code class="language-java">
+public class HeapSort {
+    public static void heapSort(Data[] data) {
+        // Stelle Heap-Order her
+        for (int i = data.length / 2 - 1; i >= 0; i--) {
+            heapify(data, data.length, i);
+        }
+        for (int i = data.length - 1; i > 0; i--) {
+            // Tausche Wurzel mit letztem Element
+            Data temp = data[0];
+            data[0] = data[i];
+            data[i] = temp;
+            // Wiederherstellen der Heap-Eigenschaft
+            heapify(data, i, 0);
+        }
+    }
+}
+            </code></pre>
+            <white-space></white-space>
+            <h3>Heapify</h3>
+            <pre><code class="language-java">
+public static void heapify(Data[] data, int n, int i) {
+    while (2 * index + 1 <= maxIndex) {    // Solange linkes Kind existiert
+        int child = 2 * index + 1;
+        if (child + 1 <= maxIndex) {    // Falls rechtes Kind existiert
+            if (data[child].compareTo(data[child + 1]) < 0) {
+                child++;    // Rechtes Kind ist größer
+            }
+        }
+        // Kind ist index für größten Key
+        // Muss das Element versickert werden?
+        if (data[index].compareTo(data[child]) < 0) {
+            // ja -> Tausche Elemente aus (index & child)
+            Data temp = data[index];
+            data[index] = data[child];
+            data[child] = temp;
+            index = child;
+        } else {
+            // nein -> Heap-Eigenschaft erfüllt
+            return;
+        }
+    }
+}
+            </code></pre>
+            <white-space></white-space>
+
+            <h2>Kosten</h2>
+            <p>
+                Initialisierung + Sortierung:<br><br>
+                C<sub>max</sub> 𝜖 O (n log n)<br>
+                M<sub>max</sub> 𝜖 O (n log n)
+            </p>
+            <p>
+                Bedenke: + Kosten für Heap-Initialisierung (Heapify)<br><br>
+                <img class="center" src="img\HeapSortKosten.png">
+            </p>
+        
+        </details>
+
         <white-space></white-space>
     </div>
 
-    <div class="container" id="section13">
+    <div class="container" id="section15">
+        <h1>Entscheidungsbäume</h1>
+        <p>
+            <b>Entscheidungsbäume</b> sind Binärbäume dessen innere Knoten <b>Paare von Indizes</b> enthalten.
+        </p>
+        <white-space></white-space>
+        <h3>Beispiel</h3>
+        <p>
+            Sei k<sub>0</sub>, k<sub>1</sub>, k<sub>2</sub> =  7, 9, 8<br>
+            <br>
+            7 < 9 -> links<br>
+            9 < 8 -> rechts<br>
+            7 < 8 -> links<br> 
+        </p>
+        <white-space></white-space>
+        <img class="center" src="img\Entscheidungsbäume1.png">
+        <white-space></white-space>
+    </div>
+
+    <div class="container" id="section16">
         <h1>Graphen</h1>
         <p>
-
+            <b>Graphen</b> sind eine Datenstruktur die aus <b>Knoten</b> und <b>Kanten</b> besteht.
         </p>
         <white-space></white-space>
     </div>
