@@ -136,6 +136,18 @@ body {
     flex: 1;
 }
 
+.container a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.container a:hover {
+    color: lightskyblue;
+    transition: 0.2s;
+}
+
 /* Navigation */
 .navigation {
     display: flex;
@@ -199,13 +211,13 @@ h1 {
 }
 h2 {
     color: rgb(60, 121, 158);
-    font-size: 1.2em;
+    font-size: 1.25em;
     margin: 0;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin: 0;
     font-weight: bold;
 }
@@ -245,16 +257,25 @@ li a:hover {
 
 .red {
     color: red;
+    text-shadow: 0.01px 0.01px 0px black;
     font-weight: bold;
 }
 
 .blue {
     color: rgb(0, 153, 255);
+    text-shadow: 0.01px 0.01px 0px black;
     font-weight: bold;
 }
 
 .yellow {
-    color: rgb(255, 217, 0);
+    color: rgb(255, 208, 0);
+    text-shadow: 0.01px 0.01px 0px black;
+    font-weight: bold;
+}
+
+.green {
+    color: rgb(0, 204, 102);
+    text-shadow: 0.01px 0.01px 0px black;
     font-weight: bold;
 }
 

@@ -52,7 +52,8 @@
 
             <h2>Surjektiv</h2>
             <p>
-                Lorem Ipsum
+                Eine Abbildung ist surjektiv, wenn jedes Element aus B mindestens einmal abgebildet wird.<br>
+                <b>Zu Zeigen</b> ist dass für jedes b aus B ein a aus A existiert, sodass <b>f(a) = b</b>
             </p>
         </div>
 
@@ -131,8 +132,11 @@
             <h2>Verknüpfungen von Vektoren</h2>
             <p>
                 Es gibt eine Verknüpfung + auf V, die je zwei Vektoren v
-                und w einen Vektor v + w zuordnet, so dass für alle u, v, w ∈ V die folgenden Eigenscha!en
-                erfüllt sind:
+                und w einen Vektor v + w zuordnet, so dass für alle u, v, w ∈ V die folgenden <b>Axiome</b>
+                erfüllt sind:<br>
+                <br>
+                <b>Vektoren</b> sind Element von V<br>
+                <b>Skalare</b> sind Element von K
             </p>
             <trenn-strich></trenn-strich>
             <h2>Axiome</h2>
@@ -158,6 +162,7 @@
                 u + v = v + u
             </p>
             <trenn-strich></trenn-strich>
+            <h2>Begriffe</h2>
             <p>
                 <b>Homomorphismus</b><br>
                 Lineare Abbildung von Vektoren über Körper K
@@ -173,12 +178,114 @@
             <p>
                 <b>Isomorphismus</b><br>
                 Bijektiver Homomorphismus
+            </p>
+            <trenn-strich></trenn-strich>
+            <h2>Unterverktorraum</h2>
+            <p>
+                Ein Untervektorraum U von V ist eine Teilmenge von V, die selbst ein Vektorraum ist.
+            </p>
+            <fieldset>
+            <h3>Kriterien</h3>
+            <p>
+                <b>1.</b> U ist nicht leer (U /= ∅)<br>
+                <b>2.</b> ∀v, w ∈ U und ∀λ, μ ∈ K gilt:<br>
+                &nbsp; &nbsp; &nbsp;<b>λv + μw ∈ U</b>
+            </p>
+            </fieldset>
+            <p>
+                <b>Zu Zeigen</b> ist dass U für alle u, v ∈ U und alle k ∈ K die folgenden Bedingungen erfüllt:<br>
+                1. u + v ∈ U<br>
+                2. k * u ∈ U
+            </p>
+            <trenn-strich></trenn-strich>
+            <h2>Erzeugendensystem</h2>
+            <p>
+                Ein Erzeugendensystem von V ist eine Teilmenge von V, die durch Linearkombinationen<br>
+                <b>alle Vektoren von V erzeugt.</b><br>
+                <br>
+                <fieldset>
+                lR - Vektorraum(lR<sup>3</sup>, +, *)<br>
+                <span class="green">E</span> = {<span class="green">e<sub>1</sub>, e<sub>2</sub>, ..., e<sub>n</sub></span>} ⊆ lR<sup>3</sup><br>
+                ist Erzeugendensystem von lR<sup>3</sup> wenn gilt:<br>
+                <br>
+                ∀v ∈ lR<sup>3</sup>:<br>
+                ∃λ<sub>1</sub>, λ<sub>2</sub>, λ<sub>3</sub> ∈ lR:<br>
+                <b>v = λ<sub>1</sub><span class="green">e<sub>1</sub></span> + λ<sub>2</sub><span class="green">e<sub>2</sub></span> + λ<sub>3</sub><span class="green">e<sub>3</sub></span></b><br>
+                </fieldset>
+                <br>
+            </p>
+            <p>
+                <span class="blue">Beispiel:</span><br>
+                \[
+
+                \begin{bmatrix}
+                    x \\ y \\ z
+                \end{bmatrix}
+                = x
+                \begin{bmatrix}
+                    1 \\ 0 \\ 0
+                \end{bmatrix}
+                * y
+                \begin{bmatrix}
+                    0 \\
+                    1 \\
+                    0
+                \end{bmatrix}
+                * z
+                \begin{bmatrix}
+                    0 \\ 0 \\ 1
+                \end{bmatrix}
+
+                \]
+            </p>
+            <trenn-strich></trenn-strich>
+            <h2>Lineare (Un)abhängigkeit</h2>
+            <p>
+                Eine Menge von Vektoren ist linear unabhängig, wenn sich <b>keiner der Vektoren als Linearkombination
+                der anderen Vektoren darstellen lässt.</b><br>
+                <br>
+                <span class="blue">Wie überprüfe ich auf lineare (un)abhängigkeit?</span><br>
+                <br>
+            </p>
+            <h3>Triviale Lösung</h3>
+            <p>
+                (Setze für λ<sub>1</sub>, λ<sub>2</sub>, ..., λ<sub>n</sub> = 0 ein)<br>
+
+                \[
+
+                0
+                = 0
+                \begin{bmatrix}
+                    1 \\ 0 \\ 0
+                \end{bmatrix}
+                * 0
+                \begin{bmatrix}
+                    0 \\
+                    1 \\
+                    0
+                \end{bmatrix}
+                * 0
+                \begin{bmatrix}
+                    0 \\ 0 \\ 1
+                \end{bmatrix}
+
+                \]
+            </p>
+            <h3>"Richtiges Verfahren"</h3>
+            <p>
+                (Seien λ<sub>1</sub>, λ<sub>2</sub>, ..., λ<sub>n</sub> ∈ lR, einige λ<sub>i</sub>  ≠ 0)<br>
+            </p>
+
+
+
+            <white-space></white-space>
         </div>
 
         <div class="container" id="section8">
             <h1>Lorem Ipsum</h1>
             <p>Lorem Ipsum.</p>
         </div>
-</body>
 
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>

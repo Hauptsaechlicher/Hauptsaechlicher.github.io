@@ -15,41 +15,215 @@
         <nav class="navigation">
             <div class="navdiv">
                 <ul>
-                    <li><a href="#section1">01 -</a></li>
-                    <li><a href="#section2">02 -</a></li>
-                    <li><a href="#section3">03 -</a></li>
-                    <li><a href="#section4">04 -</a></li>
+                    <li><a href="#section1">01 Logik und Mathematische Aussagen</a></li>
+                    <li><a href="#section2">02 Beweismethoden</a></li>
+                    <li><a href="#section3">03 Relationen</a></li>
+                    <li><a href="#section4">04 Abbildungen</a></li>
+                    <li><a href="#section4">05 Graphentheorie</a></li>
+                    <li><a href="#section4">06 Kombinatorik</a></li>
                 </ul>
             </div>
             <div class="navdiv">
                 <ul>
-                    <li><a href="#section5">05 -</a></li>
-                    <li><a href="#section6">06 -</a></li>
-                    <li><a href="#section7">07 -</a></li>
-                    <li><a href="#section8">08 -</a></li>
+                    <li><a href="#section5">06 Teilbarkeitstheorie</a></li>
+                    <li><a href="#section6">07 Primzahlen</a></li>
+                    <li><a href="#section7">08 Fundamentalsatz der Arithmetik</a></li>
+                    <li><a href="#section8">09 Kongruenzen / Restklassen</a></li>
+                    <li><a href="#section4">10 Algebraische Strukturen</a></li>
                 </ul>
             </div>
         </nav>
         </div>
 
         <div class="container" id="section1">
-            <h1>-</h1>
-            <p>Lorem Ipsum.</p>
+            <h1>Logik und Mathematische Aussagen</h1>
+            <h2>Operatoren</h2>
+            <white-space></white-space>
+            <fieldset>
+                <p>
+                    <b>¬</b> : Negation (NICHT)<br>
+                    <b>^</b> : Konjunktion (UND)<br>
+                    <b>v</b> : Disjunktion (ODER)<br>
+                    <b>=></b> : Implikation (WENN-DANN)<br>
+                    <b><=></b> : Äquivalenz (GENAU DANN WENN)
+                </p>
+            </fieldset>
+            <trenn-strich></trenn-strich>
+            <h2>Wahrheitstafel</h2>
+            <white-space></white-space>
+            <img src="img\Wahrheitstafel.png" class="center">
+
+            <trenn-strich></trenn-strich>
+            <h2>DNF (Disjunktive Normalform)</h2>
+            <white-space></white-space>
+            <fieldset>
+                <p>
+                    <b>Definition:</b><br>
+                    Ein Term D ist in <b>disjunktiver Normalform (DNF)</b> bezüglich der Variablen A<sub>1</sub>, ... , A<sub>n</sub>, wenn<br>
+                </p>
+                <p class="p-center">
+                    D = C<sub>1</sub> v C<sub>2</sub> v ... v C<sub>k</sub>
+                </p>
+                <p>
+                    wobei C<sub>j</sub> = B<sub>1</sub> ^ B<sub>2</sub> ^ ... ^ B<sub>m</sub> für j = 1, ... , k paarweise verschieden und<br>
+                    B<sub>i</sub> = A<sub>i</sub> oder B<sub>i</sub> = ¬A<sub>i</sub> für i = 1, ... , n
+            </fieldset>
+            <p>
+                Was bedeutet das?<br>
+                <br>
+                "Das sind Oder-Verknüpfungen und UND-Ketten<br>
+                und dienen einer simpleren Darstellung für Logik Aussagen"
+            </p>
+            <p>
+                <span class="blue">Beispiel:</span><br>
+                <br>
+                <b>Gegeben:</b> (A v B) ^ C <=> A v C<br>
+                <br>
+                <b>Aufgabe:</b> Bestimme unter Angabe der zugehörigen Wahrheitstafel eine DNF für die Aussage.<br>
+                <br>
+                
+            </p>
+            <trenn-strich></trenn-strich>
+
         </div>
 
         <div class="container" id="section2">
-            <h1>-</h1>
-            <p>Lorem Ipsum.</p>
+            <h1>Beweismethoden</h1>
+            <white-space></white-space>
+            <h2>Vollständige Induktion</h2>
+            <p>
+                Eine <b>vollständige Induktion</b> ist in folgende Schritte eingeteilt:<br>
+                <br>
+                <b>1. Induktionsbasis:</b> Beweise, dass die Aussage für n = 1 gilt.<br>
+                <b>2. Induktionsschritt:</b> (k -> k + 1)<br>
+                <br>
+                <b>&nbsp; &nbsp; 2.1 Annahme:</b> "Für ein beliebiges, aber festes k ∈ lN sei A(k) wahr.<br>
+                <b>&nbsp; &nbsp; 2.2 Zu zeigen:</b> Beweise, dass A(k) -> A(k + 1) gilt.<br>
+                <b>&nbsp; &nbsp; 2.3 Induktionsbeweis:</b> Rechnung
+            </p>
+            <white-space></white-space>
+            <p>
+                <span class="blue">Beispiel:</span><br>
+                <br>
+                <b>Behauptung:</b> Für alle n ∈ N gilt: <b>∑<sup>n</sup><sub>j=1</sub> j = 1 + 2 + ... + n = <sup>n (n + 1)</sup>/ <sub>2</sub></b><br>
+                <b>Aufgabe:</b> Beweise dies mittels vollständiger Induktion.
+            </p>
+            <img class="center" src="img\Induktion1.png">
+            <white-space></white-space>
         </div>
 
         <div class="container" id="section3">
-            <h1>-</h1>
-            <p>Lorem Ipsum.</p>
+            <h1>Relationen</h1>
+            <h2>Äquivalenzrelationen</h2>
+            <white-space></white-space>
+            <fieldset>
+            <p>
+                <b>Definition:</b><br>
+                Eine Relation R auf einer Menge M ist eine Äquivalenzrelation,<br>
+                wenn sie <b>reflexiv, symmetrisch</b> und <b>transitiv</b> ist.
+            </p>
+            </fieldset>
+            <white-space></white-space>
+            <p>
+                <span class="blue">Beispiel:</span><br>
+                <b>Zeige:</b> R = {(x, y) ∈ N x N | x + y ist gerade} ist eine Äquivalenzrelation.
+            </p>
+            <p>
+                <b>Z.Z.:</b> R reflexiv, symmetrisch und transitiv.
+            </p>
+            <white-space></white-space>
+            <h3>1. Reflexiv</h3>
+            <p>
+                <b>Z.Z.: ∀x ∈ N:<br>
+                    (x,x) ∈ R</b><br>
+                    (aka. xRx)<br>
+                <br>
+                Sei x ∈ N.<br>x + x = 2x, also gerade und (x, x) ∈ R
+            </p>
+            <white-space></white-space>
+            <h3>2. Symmetrisch</h3>
+            <p>
+                <b>Z.Z.: ∀x,y ∈ N:<br>
+                    (x,y) ∈ R, dann auch (y,x) ∈ R</b><br>
+                    (aka. xRy => yRx)<br>
+                <br>
+                Seien x, y ∈ N mit (x, y) ∈ R.<br>
+                Dann ∃k ∈ N: <b>x + y = 2k</b><br>
+                Somit ist auch <b>y + x = 2k</b> und damit (y, x) ∈ R
+            </p>
+            <white-space></white-space>
+            <h3>3. Transitiv</h3>
+            <p>
+                <b>Z.Z.: ∀x,y,z ∈ N:<br>
+                    (x,y) ∈ R und (y,z) ∈ R, dann auch (x,z) ∈ R</b><br>
+                    (aka. xRy & yRz => xRz)<br>
+                <br>
+                Seien x, y, z ∈ N mit (x, y) ∈ R und (y, z) ∈ R.<br>
+                Dann ∃k, l ∈ N: <b>x + y = 2k</b> und <b>y + z = 2l</b><br>
+                Somit ist:<br>
+                <br><b>
+                (x + y) + (y + z) = 2k + 2l<br>
+                <=> x + 2y + z = 2k + 2l<br>
+                <=> x + 2y + z = 2(k + l)<br>
+                <=> x + z = 2(k + l - y)<br>
+                <=> x + z = 2<span class="red">m</span>
+                </b><br>
+                d.h. (x, z) ∈ R
+            </p>
+            <trenn-strich></trenn-strich>
+            <h2>Ordnungsrelationen</h2>
+            <white-space></white-space>
+            <fieldset>
+            <p>
+                <b>Definition:</b> Eine Relation R auf einer Menge M ist eine Ordnungsrelation,<br>
+                wenn sie <b>reflexiv, anti-symmetrisch</b> und <b>transitiv</b> ist.
+            </p>
+            </fieldset>
+            <white-space></white-space>
+            <h3>Anti-Symmetrie</h3>
+            <p>
+                <b>Es gilt:</b> xRy & yRx (Siehe Symmetrie)<br>
+                <br>
+                xRy - yRx = 0<br>
+                (x + 3y) - (y + 3x) = 4k<sub>1</sub> - 4k<sub>2</sub><br>
+                <=> -2x + 2y = 4k<sub>1</sub> - 4k<sub>2</sub><br>
+                <=> -x + y = 2(k<sub>1</sub> - k<sub>2</sub>)<br>
+                <br>
+                Falls k<sub>1</sub> = 1, k<sub>2</sub> = 0<br>
+                Dann: -x + y = 2(1 - 0)<br>
+                <=> -x + y = 2<br>
+                <=> -x = 2 - y<br>
+                <=> = y - 2 =/ x<br>
+
+            </p>
+            <trenn-strich></trenn-strich>
+            <h2>Äquivalenzklassen</h2>
+            <white-space></white-space>
         </div>
 
         <div class="container" id="section4">
-            <h1>-</h1>
-            <p>Lorem Ipsum.</p>
+            <h1>Abbildungen</h1>
+            <p>
+                Abbildungen  von Menge A und Menge B werden wie folgt dargestellt:
+            </p>
+            <img class="center" src="img\Abbildung1.png">
+
+            <white-space></white-space>
+            <p>
+                Abbildungen haben dabei folgende <b>Eigenschaften:</b>
+            </p>
+            <img class="center" src="img\Abbildung2.png">
+            <h2>Injektiv</h2>
+            <p>
+                Eine Abbildung ist injektiv, wenn jedes Element aus A auf ein Element aus B abgebildet wird.<br>
+                <b>Zu Zeigen</b> ist dass für alle a<sub>1</sub> und a<sub>2</sub> aus A gilt: <b>f(a<sub>1</sub>) ≠ f(a<sub>2</sub>) => a<sub>1</sub> ≠ a<sub>2</sub></b> 
+            </p>
+
+            <h2>Surjektiv</h2>
+            <p>
+                Eine Abbildung ist surjektiv, wenn jedes Element aus B mindestens einmal abgebildet wird.<br>
+                <b>Zu Zeigen</b> ist dass für jedes b aus B ein a aus A existiert, sodass <b>f(a) = b</b>
+            </p>
         </div>
 
         <div class="container" id="section5">
